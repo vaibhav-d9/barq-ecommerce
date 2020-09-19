@@ -1,0 +1,37 @@
+.checkoutProduct {
+  display: flex;
+  background-color: white;
+  width: 35rem;
+  margin-bottom: 10px;
+
+  .productImage {
+    width: 6rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .checkoutProductInfo {
+    padding: 20px;
+
+    p {
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .checkoutProduct_name {
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+  .removeFromBag {
+    background-color: #e9e9e9;
+    border: none;
+    padding: 10px 25px;
+    color: #363636;
+    font-weight: 600;
+    margin-top: 12px;
+    cursor: pointer;
+    outline: none;
+  }
+}
