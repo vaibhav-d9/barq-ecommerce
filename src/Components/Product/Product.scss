@@ -1,0 +1,37 @@
+.product {
+  margin-top: 20px;
+  width: 15rem;
+
+  .product_top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .productImg {
+      width: 100%;
+    }
+    button {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      border: none;
+      background-color: #363636e5;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+
+  .product_bottom {
+    margin-top: 10px;
+    p {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .productPrice {
+      margin-top: 5px;
+    }
+  }
+}

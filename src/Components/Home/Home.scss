@@ -1,0 +1,20 @@
+.home {
+  margin: 0 100px;
+
+  .productCategory {
+    margin: 100px auto;
+
+    h1 {
+      border-bottom: 1px solid rgba(122, 122, 122, 0.185);
+      padding: 5px;
+      font-size: 30px;
+    }
+
+    .productCategory_products {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+}
