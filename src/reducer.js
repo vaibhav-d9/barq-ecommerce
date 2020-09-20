@@ -1,5 +1,6 @@
 export const initialState = {
   bag: [],
+  user: null,
 };
 
 export const getBagTotal = (bag) =>
@@ -26,6 +27,11 @@ const reducer = (state, action) => {
 
       return { ...state, bag: newBag };
 
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+      };
     default:
       return state;
   }
