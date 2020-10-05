@@ -1,17 +1,12 @@
 .login {
   background-color: white;
-  margin: 5rem auto;
+  margin: 2rem auto;
   width: 30%;
-  padding: 40px;
+  padding: 10px 40px;
   -webkit-box-shadow: 36px 36px 42px -26px rgba(79, 79, 79, 0.36);
   -moz-box-shadow: 36px 36px 42px -26px rgba(79, 79, 79, 0.36);
   box-shadow: 36px 36px 42px -26px rgba(79, 79, 79, 0.36);
 
-  h1 {
-    font-family: "Abril Fatface", cursive;
-    color: #363636;
-    text-align: center;
-  }
   .input_container {
     display: flex;
     flex-direction: column;
@@ -59,6 +54,23 @@
     cursor: pointer;
     outline: none;
     width: 100%;
+  }
+  a {
+    text-decoration: none;
+  }
+  h3 {
+    color: #363636;
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
+.login_container {
+  margin: 3rem auto;
+
+  h1 {
+    font-family: "Abril Fatface", cursive;
+    color: #363636;
+    text-align: center;
   }
   a {
     text-decoration: none;

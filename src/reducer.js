@@ -1,6 +1,5 @@
 export const initialState = {
   bag: [],
-  user: null,
 };
 
 export const getBagTotal = (bag) =>
@@ -10,6 +9,12 @@ const reducer = (state, action) => {
   console.log("Action >", action);
 
   switch (action.type) {
+    case "SET_CART":
+      return {
+        ...state,
+        bag: [...state.bag, action.cart],
+      };
+
     case "ADD_TO_BAG":
       return {
         ...state,

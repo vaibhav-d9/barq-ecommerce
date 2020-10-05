@@ -1,32 +1,34 @@
-import React from "react";
+import React, { forwardRef, useState } from "react";
+import { auth, db } from "../../firebase";
 import { useStateValue } from "../../StateProvider";
 
 import "./CheckoutProduct.scss";
 
-function CheckoutProduct({ id, image, productName, productPrice }) {
-  const [{ bag }, dispatch] = useStateValue();
+const CheckoutProduct = forwardRef(
+  ({ id, image, productName, productPrice }, ref) => {
+    const removeFromBag = () => {
+      db.collection("users")
+        .doc(auth.currentUser.uid)
+        .collection("cart")
+        .doc(id)
+        .delete();
+    };
 
-  const removeFromBag = () => {
-    dispatch({
-      type: "REMOVE_FROM_BAG",
-      id: id,
-    });
-  };
-
-  return (
-    <div className="checkoutProduct">
-      <div className="productImage">
-        <img src={image}></img>
+    return (
+      <div className="checkoutProduct" ref={ref}>
+        <div className="productImage">
+          <img src={image}></img>
+        </div>
+        <div className="checkoutProductInfo">
+          <p className="checkoutProduct_name">{productName}</p>
+          <p className="checkoutProduct_price">₹{productPrice}</p>
+          <button className="removeFromBag" onClick={removeFromBag}>
+            REMOVE
+          </button>
+        </div>
       </div>
-      <div className="checkoutProductInfo">
-        <p className="checkoutProduct_name">{productName}</p>
-        <p className="checkoutProduct_price">₹{productPrice}</p>
-        <button className="removeFromBag" onClick={removeFromBag}>
-          REMOVE
-        </button>
-      </div>
-    </div>
-  );
-}
+    );
+  }
+);
 
 export default CheckoutProduct;
